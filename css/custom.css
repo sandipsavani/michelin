@@ -1,3 +1,12 @@
 .card-height {
     height: 25rem !important;
 }
+.card-img-hight {
+    height: 150px;
+}
+.text-md {
+    font-size: 0.8rem;
+}
+.card-body {
+    padding: 1rem;
+}
