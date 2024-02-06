@@ -1,5 +1,5 @@
 .card-height {
-    height: 25rem !important;
+    min-height: 25rem !important;
 }
 .card-img-hight {
     height: 150px;
@@ -9,4 +9,12 @@
 }
 .card-body {
     padding: 1rem;
+}
+
+strong{
+    color: #000;
+}
+
+table th{
+    color: #000;
 }

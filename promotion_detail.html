@@ -14,13 +14,186 @@
     <!-- Custom fonts for this template-->
     <!-- <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
 
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 
 
 </head>
+<style>
+    /* Style the tab */
+    .tab {
+        overflow: hidden;
+        border-bottom: 1px solid rgb(61, 61, 241);
+        width: 100%;
+
+    }
+
+    /* Style the buttons inside the tab */
+    .tab button {
+        background-color: inherit;
+        color: rgb(61, 61, 241);
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 3em 10px 0;
+        /* transition: 0.3s; */
+        font-size: 17px;
+    }
+
+    .promotion-details {
+        padding: 0 1em;
+    }
+
+    .promotion-details p {
+        margin-bottom: 0;
+    }
+
+    /* Change background color of buttons on hover */
+    /* .tab button:hover {
+        border-bottom: 2px solid rgb(61, 61, 241);
+    } */
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+        border-bottom: 2px solid rgb(61, 61, 241);
+    }
+
+    /* Style the tab content */
+
+    .tabcontent:first-child {
+        display: block;
+
+    }
+
+    .tabcontent {
+        display: none;
+        padding: 1em;
+        border-top: none;
+    }
+
+
+    /* Progress Bar */
+
+    .progress1[value] {
+        --color: rgb(61, 61, 241);
+        /* the progress color */
+        --background: #fff;
+        /* the background color */
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: 1px solid #000;
+        width: 400px;
+        margin: 0;
+        height: 7px;
+        border-radius: 0;
+        background: var(--background);
+    }
+
+    .progress1[value]::-webkit-progress-bar {
+        border-radius: 0;
+        background: var(--background);
+    }
+
+    .progress1[value]::-webkit-progress-value {
+        border-radius: 0;
+        background: var(--color);
+    }
+
+    .progress1[value]::-moz-progress-bar {
+        border-radius: 0;
+        background: var(--color);
+    }
+
+    .progress2[value] {
+        --color: red;
+        /* the progress color */
+        --background: #fff;
+        /* the background color */
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: 1px solid #000;
+        width: 400px;
+        margin: 0;
+        height: 7px;
+        border-radius: 0;
+        background: var(--background);
+    }
+
+    .progress2[value]::-webkit-progress-bar {
+        border-radius: 0;
+        background: var(--background);
+    }
+
+    .progress2[value]::-webkit-progress-value {
+        border-radius: 0;
+        background: var(--color);
+    }
+
+    .progress2[value]::-moz-progress-bar {
+        border-radius: 0;
+        background: var(--color);
+    }
+
+    #dataTable2_wrapper .row:first-child {
+        display: none;
+    }
+
+    .download-icon{
+        color: rgb(61, 61, 241);
+        float: right;
+    }
+
+    #tab3-input{
+        margin-top: 5px;
+        border: 1px solid rgb(61, 61, 241);
+    }
+
+    #tab3 button{
+        padding: 5px 10px;
+        margin-right: 1em;
+        background: #fff;
+        border: 2px solid rgb(61, 61, 241);
+    }
+    #tab3 button:hover{
+        color: #fff;
+        background: rgb(61, 61, 241);
+        border: 2px solid #000;
+    }
+
+    #tab3-div2{
+        display: none;
+    }
+</style>
+
+<script>
+    function openTab(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
 
 <body id="page-top">
 
@@ -166,10 +339,105 @@
 
                     <!-- Content Row -->
                     <div class="card o-hidden border-0 shadow-lg card-height">
-                        <div class="card-body p-0">
+                        <div class="card-body promotion-details">
                             <!-- Nested Row within Card Body -->
-                            <div class="row">
+                            <hr>
+                            <h4><strong>Dashboard</strong></h4>
+                            <p><strong>Promotion Name</strong> : 2024 CA BFG/UNI COMMERCIAL TRK LBB PB</p>
+                            <p><strong>Promotion Type</strong> : Program</p>
+                            <p><strong>Total Dealer Enrolled</strong> : 500</p>
+                            <div class="row" style="padding: 0 1em;">
 
+                                <div class="tab">
+                                    <button class="tablinks active" onclick="openTab(event, 'tab1')">Target</button>
+                                    <button class="tablinks" onclick="openTab(event, 'tab2')"> Product</button>
+                                    <button class="tablinks" onclick="openTab(event, 'tab3')">Estimated
+                                        Earnings</button>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <div id="tab1" class="tabcontent">
+                                        <p><strong>Tier Based</strong></p>
+                                        <progress class="progress1" value="70" max="100"></progress><br>
+                                        <label>20 units to second tier</label>
+                                        <p>&nbsp;</p>
+
+                                        <p><strong>Loyalty Based</strong></p>
+                                        <progress class="progress2" value="60" max="100"></progress><br>
+                                        <label>Required loylty: 75% </label>
+                                    </div>
+
+                                    <div id="tab2" class="tabcontent">
+                                        <label class="download-icon"><i class="fa fa-download"> </i> DOWNLOAD EXCEL</label>
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered" id="dataTable2" width="100%"
+                                                cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Product Name</th>
+                                                        <th>Bonus</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="width: 75%;">Michelin</td>
+                                                        <td>5%</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>Uniroyal</td>
+                                                        <td>5.5%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>BFGoodrich</td>
+                                                        <td>5%</td>
+                                                    </tr>
+
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <div id="tab3" class="tabcontent">
+                                        <div id="tab3-div1">
+                                            <p>&nbsp;</p>
+                                            <p><strong>Net Invoice Units</strong></p>
+                                            <input type="text" id="tab3-input">
+                                            <p>Tip: Units/Amounts are suposeed to be from primary distributors only.</p>
+                                            <p>&nbsp;</p>
+                                            <button onclick="calculateData()">CALCULATE</button> <button onclick="clearForm()">CLEAR FORM</button>
+
+                                        </div>  
+
+                                        <div id="tab3-div2">
+                                            <p>&nbsp;</p>
+                                            
+                                            <table width="90%">
+                                                <tbody>
+                                                    <tr>
+                                                        <td><h2>Tier</h2></td>
+                                                        <td><h2><strong>TIER 2</strong></h2></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><h2>Accured Amount</h2></td>
+                                                        <td><h2><strong>$33,224.60</strong></h2></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p>&nbsp;</p>
+                                            <a href="active_promotion.html"><button>BACK</button></a>
+
+                                        </div>  
+                                        
+                                        
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -237,6 +505,25 @@
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
     <script src="https://kit.fontawesome.com/a9b74ad92e.js" crossorigin="anonymous"></script>
+
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
+
+    <script>
+        function clearForm() {
+            var x = document.getElementById('tab3-input').value = '';
+            
+        }
+
+        function calculateData(){
+            var x = document.getElementById("tab3-div1");
+            x.style.display = 'none';
+            document.getElementById("tab3-div2").style.display='block';
+        }
+    </script>
 </body>
 
 </html>
