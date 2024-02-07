@@ -18,3 +18,33 @@ strong{
 table th{
     color: #000;
 }
+.active-prom-card-title:hover {
+    cursor: pointer;
+    background-color: #27509b !important;
+    color: #fff !important;
+
+}
+.active-prom-card-title a:hover {
+    text-decoration: none !important;
+    color: #fff !important;
+}
+.padding-0{
+    padding: 0px !important
+}
+.padding-lr {
+    padding: 0 1rem;
+}
+.padding-1 {
+    padding: 1rem;
+}
+
+.margin-0 {
+    margin: 0px;
+}
+.prom-detail p{
+    margin-bottom: 0.2em !important;
+}
+.download-icon {
+    color: rgb(61, 61, 241);
+    float: right;
+}

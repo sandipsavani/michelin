@@ -152,29 +152,30 @@
         display: none;
     }
 
-    .download-icon{
+    .download-icon {
         color: rgb(61, 61, 241);
         float: right;
     }
 
-    #tab3-input{
+    #tab3-input {
         margin-top: 5px;
         border: 1px solid rgb(61, 61, 241);
     }
 
-    #tab3 button{
+    #tab3 button {
         padding: 5px 10px;
         margin-right: 1em;
         background: #fff;
         border: 2px solid rgb(61, 61, 241);
     }
-    #tab3 button:hover{
+
+    #tab3 button:hover {
         color: #fff;
         background: rgb(61, 61, 241);
         border: 2px solid #000;
     }
 
-    #tab3-div2{
+    #tab3-div2 {
         display: none;
     }
 </style>
@@ -371,7 +372,8 @@
                                     </div>
 
                                     <div id="tab2" class="tabcontent">
-                                        <label class="download-icon"><i class="fa fa-download"> </i> DOWNLOAD EXCEL</label>
+                                        <label class="download-icon"><i class="fa fa-download"> </i> DOWNLOAD
+                                            EXCEL</label>
                                         <div class="table-responsive">
                                             <table class="table table-bordered" id="dataTable2" width="100%"
                                                 cellspacing="0">
@@ -411,31 +413,40 @@
                                             <input type="text" id="tab3-input">
                                             <p>Tip: Units/Amounts are suposeed to be from primary distributors only.</p>
                                             <p>&nbsp;</p>
-                                            <button onclick="calculateData()">CALCULATE</button> <button onclick="clearForm()">CLEAR FORM</button>
+                                            <button onclick="calculateData()">CALCULATE</button> <button
+                                                onclick="clearForm()">CLEAR FORM</button>
 
-                                        </div>  
+                                        </div>
 
                                         <div id="tab3-div2">
                                             <p>&nbsp;</p>
-                                            
+
                                             <table width="90%">
                                                 <tbody>
                                                     <tr>
-                                                        <td><h2>Tier</h2></td>
-                                                        <td><h2><strong>TIER 2</strong></h2></td>
+                                                        <td>
+                                                            <h2>Tier</h2>
+                                                        </td>
+                                                        <td>
+                                                            <h2><strong>TIER 2</strong></h2>
+                                                        </td>
                                                     </tr>
                                                     <tr>
-                                                        <td><h2>Accured Amount</h2></td>
-                                                        <td><h2><strong>$33,224.60</strong></h2></td>
+                                                        <td>
+                                                            <h2>Accured Amount</h2>
+                                                        </td>
+                                                        <td>
+                                                            <h2><strong>$33,224.60</strong></h2>
+                                                        </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
                                             <p>&nbsp;</p>
                                             <a href="active_promotion.html"><button>BACK</button></a>
 
-                                        </div>  
-                                        
-                                        
+                                        </div>
+
+
                                     </div>
                                 </div>
                             </div>
@@ -498,12 +509,7 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
     <script src="https://kit.fontawesome.com/a9b74ad92e.js" crossorigin="anonymous"></script>
 
     <script src="vendor/datatables/jquery.dataTables.min.js"></script>
@@ -515,13 +521,13 @@
     <script>
         function clearForm() {
             var x = document.getElementById('tab3-input').value = '';
-            
+
         }
 
-        function calculateData(){
+        function calculateData() {
             var x = document.getElementById("tab3-div1");
             x.style.display = 'none';
-            document.getElementById("tab3-div2").style.display='block';
+            document.getElementById("tab3-div2").style.display = 'block';
         }
     </script>
 </body>
