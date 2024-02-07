@@ -178,6 +178,32 @@
     #tab3-div2 {
         display: none;
     }
+
+    #tab3-div1{
+        margin-top: 2em;
+    }
+
+    #tab3-div1 select{
+        margin-top: 1.7em;
+        padding: 3px;
+        border-radius: 2px;
+        border: 1px solid rgb(61, 61, 241);
+    }
+
+
+    /* #tab3-div2 {
+        display: none;
+    } */
+
+    .container1{
+        display: flex;
+        margin-bottom: 1.5em;
+    }
+
+    .con-child{
+        flex: 1;
+    }
+
 </style>
 
 <script>
@@ -369,6 +395,16 @@
                                         <p><strong>Loyalty Based</strong></p>
                                         <progress class="progress2" value="60" max="100"></progress><br>
                                         <label>Required loylty: 75% </label>
+
+                                        <p><strong>Goal Based</strong></p>
+                                        <progress class="progress1" value="90" max="100"></progress><br>
+                                        <label>10 units to achieve goal</label>
+                                        <p>&nbsp;</p>
+
+                                        <p><strong>Commitment Based</strong></p>
+                                        <progress class="progress1" value="90" max="100"></progress><br>
+                                        <label>10 units to achieve goal</label>
+                                        <p>&nbsp;</p>
                                     </div>
 
                                     <div id="tab2" class="tabcontent">
@@ -407,45 +443,60 @@
                                     </div>
 
                                     <div id="tab3" class="tabcontent">
-                                        <div id="tab3-div1">
-                                            <p>&nbsp;</p>
-                                            <p><strong>Net Invoice Units</strong></p>
-                                            <input type="text" id="tab3-input">
-                                            <p>Tip: Units/Amounts are suposeed to be from primary distributors only.</p>
-                                            <p>&nbsp;</p>
-                                            <button onclick="calculateData()">CALCULATE</button> <button
-                                                onclick="clearForm()">CLEAR FORM</button>
 
-                                        </div>
+                                        <div class="row" id="tab3-div1">
+                                            
+                                            <div class="container1">
+                                                <div class="con-child">
+                                                
+                                                    <p><strong>Net Invoice Units</strong></p>
+                                                    <input type="text" id="tab3-input">
+                                                    <p>Tip: Units/Amounts are suposeed to be from primary distributors only.</p>
+                                                </div>
+    
+                                                <div class="con-child">
+                                                    
+                                   
+                                                    <select name="" id="tab3-dropdown">
+                                                        <option value="">Select Product</option>
+                                                        <option value="Michelin">Michelin</option>
+                                                        <option value="Uniroyal">Uniroyal</option>
+                                                        <option value="BFGoodrich">BFGoodrich</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                            <button onclick="calculateData()">CALCULATE</button> <button onclick="clearForm()">CLEAR FORM</button>
 
-                                        <div id="tab3-div2">
-                                            <p>&nbsp;</p>
+                                            
 
-                                            <table width="90%">
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <h2>Tier</h2>
-                                                        </td>
-                                                        <td>
-                                                            <h2><strong>TIER 2</strong></h2>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <h2>Accured Amount</h2>
-                                                        </td>
-                                                        <td>
-                                                            <h2><strong>$33,224.60</strong></h2>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <p>&nbsp;</p>
-                                            <a href="active_promotion.html"><button>BACK</button></a>
+                                    </div>
 
-                                        </div>
-
+                                    <div id="tab3-div2">
+                                        <p>&nbsp;</p>
+                                        <table width="90%">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <h2>Tier</h2>
+                                                    </td>
+                                                    <td>
+                                                        <h2><strong>TIER 2</strong></h2>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <h2>Accured Amount</h2>
+                                                    </td>
+                                                    <td>
+                                                        <h2><strong>$33,224.60</strong></h2>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p>&nbsp;</p>
+                                        <button onclick="backButton()">BACK</button>
 
                                     </div>
                                 </div>
@@ -517,6 +568,7 @@
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
+    <script src="js/sb-admin-2.js"></script>
 
     <script>
         function clearForm() {
@@ -528,6 +580,14 @@
             var x = document.getElementById("tab3-div1");
             x.style.display = 'none';
             document.getElementById("tab3-div2").style.display = 'block';
+        }
+
+        function backButton(){
+            var x = document.getElementById("tab3-div2");
+            x.style.display = 'none';
+            document.getElementById("tab3-div1").style.display='block';
+            document.getElementById('tab3-input').value = '';
+            document.getElementById('tab3-dropdown').value = ''
         }
     </script>
 </body>
