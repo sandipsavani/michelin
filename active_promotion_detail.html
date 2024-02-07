@@ -14,10 +14,17 @@
     <!-- Custom fonts for this template-->
     <!-- <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
 
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 
 
 </head>
@@ -162,137 +169,120 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <h1 class="h3 mb-4 text-gray-800">Past Promotion</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Promotion Detail</h1>
 
                     <!-- Content Row -->
-                    <div class="row">
-                        <div class="col-xl-4 col-md-6 mb-4">
-                            <div class="card  shadow h-100">
-                                <div class="row no-gutters">
-                                    <div class="col-md-4">
-                                        <img src="img/promotion.png" class="card-img card-img-hight" alt="...">
+                    <div class="card o-hidden border-0 shadow-lg card-height">
+                        <div class="card-body promotion-details">
+                            <!-- Nested Row within Card Body -->
+                            <hr>
+                            <h4><strong>Dashboard</strong></h4>
+                            <p><strong>Promotion Name</strong> : 2024 CA BFG/UNI COMMERCIAL TRK LBB PB</p>
+                            <p><strong>Promotion Type</strong> : Program</p>
+                            <p><strong>Total Dealer Enrolled</strong> : 500</p>
+                            <div class="row" style="padding: 0 1em;">
+
+                                <div class="tab">
+                                    <button class="tablinks active" onclick="openTab(event, 'tab1')">Target</button>
+                                    <button class="tablinks" onclick="openTab(event, 'tab2')"> Product</button>
+                                    <button class="tablinks" onclick="openTab(event, 'tab3')">Estimated
+                                        Earnings</button>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <div id="tab1" class="tabcontent">
+                                        <p><strong>Tier Based</strong></p>
+                                        <progress class="progress1" value="70" max="100"></progress><br>
+                                        <label>20 units to second tier</label>
+                                        <p>&nbsp;</p>
+
+                                        <p><strong>Loyalty Based</strong></p>
+                                        <progress class="progress2" value="60" max="100"></progress><br>
+                                        <label>Required loylty: 75% </label>
                                     </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">
-                                                <div class="text-md font-weight-bold text-primary text-uppercase mb-1">
-                                                    DJ-2023 US ONE MICHELIN BONUS PASS/LT
-                                                </div>
-                                            </h5>
-                                            <p class="card-text">
-                                                <span class="h5 mb-0 font-weight-bold text-gray-800">$6,277.44
-                                                </span><span class="text-xs">Period Earned</span>
-                                            </p>
-                                            <p class="card-text"><small class="text-muted">End date on
-                                                    12/31/2004</small></p>
+
+                                    <div id="tab2" class="tabcontent">
+                                        <label class="download-icon"><i class="fa fa-download"> </i> DOWNLOAD
+                                            EXCEL</label>
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered" id="dataTable2" width="100%"
+                                                cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Product Name</th>
+                                                        <th>Bonus</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="width: 75%;">Michelin</td>
+                                                        <td>5%</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>Uniroyal</td>
+                                                        <td>5.5%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>BFGoodrich</td>
+                                                        <td>5%</td>
+                                                    </tr>
+
+
+
+                                                </tbody>
+                                            </table>
                                         </div>
+                                    </div>
+
+                                    <div id="tab3" class="tabcontent">
+                                        <div id="tab3-div1">
+                                            <p>&nbsp;</p>
+                                            <p><strong>Net Invoice Units</strong></p>
+                                            <input type="text" id="tab3-input">
+                                            <p>Tip: Units/Amounts are suposeed to be from primary distributors only.</p>
+                                            <p>&nbsp;</p>
+                                            <button onclick="calculateData()">CALCULATE</button> <button
+                                                onclick="clearForm()">CLEAR FORM</button>
+
+                                        </div>
+
+                                        <div id="tab3-div2">
+                                            <p>&nbsp;</p>
+
+                                            <table width="90%">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <h2>Tier</h2>
+                                                        </td>
+                                                        <td>
+                                                            <h2><strong>TIER 2</strong></h2>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <h2>Accured Amount</h2>
+                                                        </td>
+                                                        <td>
+                                                            <h2><strong>$33,224.60</strong></h2>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p>&nbsp;</p>
+                                            <a href="active_promotion.html"><button>BACK</button></a>
+
+                                        </div>
+
+
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-xl-4 col-md-6 mb-4">
-                            <div class="card  shadow h-100">
-                                <div class="row no-gutters">
-                                    <div class="col-md-4">
-                                        <img src="img/promotion.png" class="card-img card-img-hight" alt="...">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">
-                                                <div class="text-md font-weight-bold text-primary text-uppercase mb-1">
-                                                    LM-2023 US ONE MICHELIN BONUS PASS/LT
-                                                </div>
-                                            </h5>
-                                            <p class="card-text">
-                                                <span class="h5 mb-0 font-weight-bold text-gray-800">$6,277.44
-                                                </span><span class="text-xs">Period Earned</span>
-                                            </p>
-                                            <p class="card-text"><small class="text-muted">End date on
-                                                    12/31/2004</small></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-xl-4 col-md-6 mb-4">
-                            <div class="card  shadow h-100">
-                                <div class="row no-gutters">
-                                    <div class="col-md-4">
-                                        <img src="img/promotion.png" class="card-img card-img-hight" alt="...">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">
-                                                <div class="text-md font-weight-bold text-primary text-uppercase mb-1">
-                                                    NP-2023 US MCSN PERFORMANCE BONUS
-                                                </div>
-                                            </h5>
-                                            <p class="card-text">
-                                                <span class="h5 mb-0 font-weight-bold text-gray-800">$102,0.00
-                                                </span><span class="text-xs">Period Earned</span>
-                                            </p>
-                                            <p class="card-text"><small class="text-muted">End date on
-                                                    12/31/2004</small></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-xl-4 col-md-6 mb-4">
-                            <div class="card  shadow h-100">
-                                <div class="row no-gutters">
-                                    <div class="col-md-4">
-                                        <img src="img/promotion.png" class="card-img card-img-hight" alt="...">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">
-                                                <div class="text-md font-weight-bold text-primary text-uppercase mb-1">
-                                                    #PB PAYEECAMPAIGN
-                                                </div>
-                                            </h5>
-                                            <p class="card-text">
-                                                <span class="h5 mb-0 font-weight-bold text-gray-800">$1,933.46
-                                                </span><span class="text-xs">Period Earned</span>
-                                            </p>
-                                            <p class="card-text"><small class="text-muted">End date on
-                                                    12/31/2004</small></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-xl-4 col-md-6 mb-4">
-                            <div class="card  shadow h-100">
-                                <div class="row no-gutters">
-                                    <div class="col-md-4">
-                                        <img src="img/promotion.png" class="card-img card-img-hight" alt="...">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">
-                                                <div class="text-md font-weight-bold text-primary text-uppercase mb-1">
-                                                    LM-2023 US PASS/LT RETAIL PRODUCTIVITY BONUS
-                                                </div>
-                                            </h5>
-                                            <p class="card-text">
-                                                <span class="h5 mb-0 font-weight-bold text-gray-800">$665.60
-                                                </span><span class="text-xs">Period Earned</span>
-                                            </p>
-                                            <p class="card-text"><small class="text-muted">End date on
-                                                    12/31/2004</small></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
@@ -359,6 +349,25 @@
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
     <script src="https://kit.fontawesome.com/a9b74ad92e.js" crossorigin="anonymous"></script>
+
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
+
+    <script>
+        function clearForm() {
+            var x = document.getElementById('tab3-input').value = '';
+
+        }
+
+        function calculateData() {
+            var x = document.getElementById("tab3-div1");
+            x.style.display = 'none';
+            document.getElementById("tab3-div2").style.display = 'block';
+        }
+    </script>
 </body>
 
 </html>
