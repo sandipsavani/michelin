@@ -196,11 +196,10 @@
                                             let paramString = window.location.href.split('?')[1];
                                             let queryString = new URLSearchParams(paramString);
                                             let name = ''
-                                            console.log('queryString: ', queryString);
+                                        
                                             for (let pair of queryString.entries()) {
                                                 name = pair[1];
                                             }
-                                            console.log('name: ', name);
                                             document.getElementById("promName").textContent = name;
                                         </script>
 

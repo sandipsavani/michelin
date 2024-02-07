@@ -370,7 +370,17 @@
                             <!-- Nested Row within Card Body -->
                             <hr>
                             <h4><strong>Dashboard</strong></h4>
-                            <p><strong>Promotion Name</strong> : 2024 CA BFG/UNI COMMERCIAL TRK LBB PB</p>
+                            <p><strong>Promotion Name</strong> : <span id="activepromName"></span></p>
+                            <script>
+                                let paramString = window.location.href.split('?')[1];
+                                let queryString = new URLSearchParams(paramString);
+                                let name = ''
+                            
+                                for (let pair of queryString.entries()) {
+                                    name = pair[1];
+                                }
+                                document.getElementById("activepromName").textContent = name;
+                            </script>
                             <p><strong>Promotion Type</strong> : Program</p>
                             <p><strong>Total Dealer Enrolled</strong> : 500</p>
                             <div class="row" style="padding: 0 1em;">
