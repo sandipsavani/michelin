@@ -362,7 +362,7 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <h1 class="h3 mb-4 text-gray-800">Promotion Detail</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Promotion Details</h1>
 
                     <!-- Content Row -->
                     <div class="card o-hidden border-0 shadow-lg card-height">
@@ -387,7 +387,7 @@
 
                                 <div class="tab">
                                     <button class="tablinks active" onclick="openTab(event, 'tab1')">Target</button>
-                                    <button class="tablinks" onclick="openTab(event, 'tab2')"> Product</button>
+                                    <button class="tablinks" onclick="openTab(event, 'tab2')"> Products</button>
                                     <button class="tablinks" onclick="openTab(event, 'tab3')">Estimated
                                         Earnings</button>
                                 </div>
@@ -404,16 +404,16 @@
 
                                         <p><strong>Loyalty Based</strong></p>
                                         <progress class="progress2" value="60" max="100"></progress><br>
-                                        <label>Required loylty: 75% </label>
+                                        <label>Required loyalty: 75% </label>
 
                                         <p><strong>Goal Based</strong></p>
-                                        <progress class="progress1" value="90" max="100"></progress><br>
+                                        <progress class="progress2" value="90" max="100"></progress><br>
                                         <label>10 units to achieve goal</label>
                                         <p>&nbsp;</p>
 
                                         <p><strong>Commitment Based</strong></p>
-                                        <progress class="progress1" value="90" max="100"></progress><br>
-                                        <label>10 units to achieve goal</label>
+                                        <progress class="progress1" value="100" max="100"></progress><br>
+                                        <label>Commitment achieved</label>
                                         <p>&nbsp;</p>
                                     </div>
 
@@ -461,7 +461,7 @@
                                                 
                                                     <p><strong>Net Invoice Units</strong></p>
                                                     <input type="text" id="tab3-input">
-                                                    <p>Tip: Units/Amounts are suposeed to be from primary distributors only.</p>
+                                                    <p>Tip: Units/Amounts are supposed to be from primary distributors only.</p>
                                                 </div>
     
                                                 <div class="con-child">
@@ -582,8 +582,8 @@
 
     <script>
         function clearForm() {
-            var x = document.getElementById('tab3-input').value = '';
-
+            document.getElementById('tab3-input').value = '';
+            document.getElementById('tab3-dropdown').value = ''
         }
 
         function calculateData() {
