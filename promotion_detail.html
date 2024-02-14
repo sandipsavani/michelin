@@ -25,6 +25,9 @@
     <link href="css/custom.css" rel="stylesheet">
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+    <!-- For tooltip -->
+    <link type="text/css" rel="stylesheet" href="/(path)/tooltip.css" />
+
 
 
 </head>
@@ -84,72 +87,21 @@
 
     /* Progress Bar */
 
-    .progress1[value] {
-        --color: rgb(61, 61, 241);
-        /* the progress color */
-        --background: #fff;
-        /* the background color */
 
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        border: 1px solid #000;
-        width: 400px;
-        margin: 0;
-        height: 7px;
-        border-radius: 0;
-        background: var(--background);
-    }
-
-    .progress1[value]::-webkit-progress-bar {
-        border-radius: 0;
-        background: var(--background);
-    }
-
-    .progress1[value]::-webkit-progress-value {
-        border-radius: 0;
-        background: var(--color);
-    }
-
-    .progress1[value]::-moz-progress-bar {
-        border-radius: 0;
-        background: var(--color);
-    }
-
-    .progress2[value] {
-        --color: red;
-        /* the progress color */
-        --background: #fff;
-        /* the background color */
-
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        border: 1px solid #000;
-        width: 400px;
-        margin: 0;
-        height: 7px;
-        border-radius: 0;
-        background: var(--background);
-    }
-
-    .progress2[value]::-webkit-progress-bar {
-        border-radius: 0;
-        background: var(--background);
-    }
-
-    .progress2[value]::-webkit-progress-value {
-        border-radius: 0;
-        background: var(--color);
-    }
-
-    .progress2[value]::-moz-progress-bar {
-        border-radius: 0;
-        background: var(--color);
-    }
 
     #dataTable2_wrapper .row:first-child {
         display: none;
+    }
+
+    /* bootstrap progress bar */
+    .progress {
+        border: 1px solid #000;
+        border-radius: 0;
+        background-color: #fff;
+    }
+
+    .progress-bar {
+        background-color: rgb(61, 61, 241);
     }
 
     .download-icon {
@@ -179,11 +131,11 @@
         display: none;
     }
 
-    #tab3-div1{
+    #tab3-div1 {
         margin-top: 2em;
     }
 
-    #tab3-div1 select{
+    #tab3-div1 select {
         margin-top: 1.7em;
         padding: 3px;
         border-radius: 2px;
@@ -195,15 +147,14 @@
         display: none;
     } */
 
-    .container1{
+    .container1 {
         display: flex;
         margin-bottom: 1.5em;
     }
 
-    .con-child{
+    .con-child {
         flex: 1;
     }
-
 </style>
 
 <script>
@@ -375,7 +326,7 @@
                                 let paramString = window.location.href.split('?')[1];
                                 let queryString = new URLSearchParams(paramString);
                                 let name = ''
-                            
+
                                 for (let pair of queryString.entries()) {
                                     name = pair[1];
                                 }
@@ -395,211 +346,272 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-7">
-                                    <div id="tab1" class="tabcontent">
-                                        <p><strong>Tier Based</strong></p>
-                                        <progress class="progress1" value="70" max="100"></progress><br>
-                                        <label>20 units to second tier</label>
-                                        <p>&nbsp;</p>
-
-                                        <p><strong>Loyalty Based</strong></p>
-                                        <progress class="progress2" value="60" max="100"></progress><br>
-                                        <label>Required loyalty: 75% </label>
-
-                                        <p><strong>Goal Based</strong></p>
-                                        <progress class="progress2" value="90" max="100"></progress><br>
-                                        <label>10 units to achieve goal</label>
-                                        <p>&nbsp;</p>
-
-                                        <p><strong>Commitment Based</strong></p>
-                                        <progress class="progress1" value="100" max="100"></progress><br>
-                                        <label>Commitment achieved</label>
-                                        <p>&nbsp;</p>
-                                    </div>
-
-                                    <div id="tab2" class="tabcontent">
-                                        <label class="download-icon"><i class="fa fa-download"> </i> DOWNLOAD
-                                            EXCEL</label>
-                                        <div class="table-responsive">
-                                            <table class="table table-bordered" id="dataTable2" width="100%"
-                                                cellspacing="0">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Product Name</th>
-                                                        <th>Bonus</th>
-                                                    </tr>
-                                                </thead>
-
-                                                <tbody>
-                                                    <tr>
-                                                        <td style="width: 75%;">Michelin</td>
-                                                        <td>5%</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>Uniroyal</td>
-                                                        <td>5.5%</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>BFGoodrich</td>
-                                                        <td>5%</td>
-                                                    </tr>
+                                <div class="col-md-12">
+                                    
+                                        <div id="tab1" class="col-md-7 tabcontent">
 
 
 
-                                                </tbody>
-                                            </table>
+                                            <p><strong>Tier Based</strong></p>
+                                            <div class="progress" data-toggle="tooltip" title="130 Units">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width:25%; border-right:1px solid black;">
+                                                    Tier 1
+                                                </div>
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width:25%;border-right:1px solid black">
+                                                    Tier 2
+                                                </div>
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width:15%; padding-left: 3.2em; ">
+                                                    Tier 3
+                                                </div>
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width:10%; border-right:1px solid black;  background-color: #fff;">
+
+                                                </div>
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width:25%; border-right:1px solid black; background-color: #fff;">
+                                                    Tier 4
+                                                </div>
+                                            </div>
+
+                                            <label>20 units to third tier</label>
+                                            <p>&nbsp;</p>
+
+                                            <p><strong>Loyalty Based</strong></p>
+                                            <div class="progress" data-toggle="tooltip" title="60% loyalty achieved">
+                                                <div class="progress-bar" role="progressbar" style="width:60%;"></div>
+
+                                            </div>
+
+                                            <label>Required loyalty: 75% </label>
+
+                                            <p>&nbsp;</p>
+                                            <p><strong>Goal Based</strong></p>
+                                            <div class="progress" data-toggle="tooltip" title="90 units achieved">
+                                                <div class="progress-bar" role="progressbar" style="width:90%;"></div>
+
+                                            </div>
+                                            <label>10 units to achieve goal</label>
+                                            <p>&nbsp;</p>
+
+                                            <p><strong>Commitment Based</strong></p>
+                                            <div class="progress" data-toggle="tooltip" title="100%">
+                                                <div class="progress-bar" role="progressbar" style="width:100%;"></div>
+
+                                            </div>
+                                            <label>Commitment achieved</label>
+                                            <p>&nbsp;</p>
+
+
                                         </div>
-                                    </div>
+                                    
+
+                                    
+                                        <div id="tab2" class="tabcontent col-md-7">
+                                            <label class="download-icon"><i class="fa fa-download"> </i> DOWNLOAD
+                                                EXCEL</label>
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered" id="dataTable2" width="100%"
+                                                    cellspacing="0">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Product Name</th>
+                                                            <th>Bonus</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width: 75%;">Michelin</td>
+                                                            <td>5%</td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>Uniroyal</td>
+                                                            <td>5.5%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>BFGoodrich</td>
+                                                            <td>5%</td>
+                                                        </tr>
+
+
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                    
 
                                     <div id="tab3" class="tabcontent">
 
-                                        <div class="row" id="tab3-div1">
-                                            
-                                            <div class="container1">
-                                                <div class="con-child">
-                                                
-                                                    <p><strong>Net Invoice Units</strong></p>
-                                                    <input type="text" id="tab3-input">
-                                                    <p>Tip: Units/Amounts are supposed to be from primary distributors only.</p>
+                                        <div class="col-md-7">
+                                            <div class="row" id="tab3-div1">
+
+                                                <div class="container1">
+                                                    <div class="con-child">
+    
+                                                        <p><strong>Net Invoice Units</strong></p>
+                                                        <input type="text" id="tab3-input">
+                                                        <p style="font-size: 14px;">Tip: Units/Amounts are supposed to be from primary distributors
+                                                            only.</p>
+                                                    </div>
+    
+                                                    <div class="con-child">
+    
+    
+                                                        <select name="" id="tab3-dropdown">
+                                                            <option value="">Select Product</option>
+                                                            <option value="Michelin">Michelin</option>
+                                                            <option value="Uniroyal">Uniroyal</option>
+                                                            <option value="BFGoodrich">BFGoodrich</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
     
-                                                <div class="con-child">
-                                                    
-                                   
-                                                    <select name="" id="tab3-dropdown">
-                                                        <option value="">Select Product</option>
-                                                        <option value="Michelin">Michelin</option>
-                                                        <option value="Uniroyal">Uniroyal</option>
-                                                        <option value="BFGoodrich">BFGoodrich</option>
-                                                    </select>
+    
+                                                <button onclick="calculateData()">CALCULATE</button> <button
+                                                    onclick="clearForm()">CLEAR FORM</button>
+    
+    
+    
+                                            </div>
+                                        </div>
+
+                                        <div id="tab3-div2">
+                                            <p>&nbsp;</p>
+                                            <table width="60%">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <h2>Tier</h2>
+                                                        </td>
+                                                        <td>
+                                                            <h2><strong>TIER 2</strong></h2>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <h2>Accured Amount</h2>
+
+                                                        </td>
+                                                        <td>
+                                                            <h2><strong>$33,224.60</strong></h2>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p style="font-size: 14px;">Tip: Please note that the accrued amount displayed is tentative
+                                                        and may differ from the earned amount based on the promo
+                                                        configuration.</p>
                                                 </div>
                                             </div>
-                                            
-                                            
-                                            <button onclick="calculateData()">CALCULATE</button> <button onclick="clearForm()">CLEAR FORM</button>
+                                            <p>&nbsp;</p>
+                                            <button onclick="backButton()">BACK</button>
 
-                                            
-
-                                    </div>
-
-                                    <div id="tab3-div2">
-                                        <p>&nbsp;</p>
-                                        <table width="90%">
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <h2>Tier</h2>
-                                                    </td>
-                                                    <td>
-                                                        <h2><strong>TIER 2</strong></h2>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <h2>Accured Amount</h2>
-                                                    </td>
-                                                    <td>
-                                                        <h2><strong>$33,224.60</strong></h2>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <p>&nbsp;</p>
-                                        <button onclick="backButton()">BACK</button>
-
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- /.container-fluid -->
+
                 </div>
-                <!-- /.container-fluid -->
+                <!-- End of Main Content -->
+
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; Michelin</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
 
             </div>
-            <!-- End of Main Content -->
+            <!-- End of Content Wrapper -->
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Michelin</span>
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="login.html">Logout</a>
                     </div>
                 </div>
-            </footer>
-            <!-- End of Footer -->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin-2.min.js"></script>
 
 
-    <script src="https://kit.fontawesome.com/a9b74ad92e.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/a9b74ad92e.js" crossorigin="anonymous"></script>
 
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
-    <script src="js/sb-admin-2.js"></script>
+        <!-- Page level custom scripts -->
+        <script src="js/demo/datatables-demo.js"></script>
+        <script src="js/sb-admin-2.js"></script>
 
-    <script>
-        function clearForm() {
-            document.getElementById('tab3-input').value = '';
-            document.getElementById('tab3-dropdown').value = ''
-        }
+        <script type="text/javascript" src="/(path)/tooltip.js"></script>
 
-        function calculateData() {
-            var x = document.getElementById("tab3-div1");
-            x.style.display = 'none';
-            document.getElementById("tab3-div2").style.display = 'block';
-        }
+        <script>
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip({ placement: "right" });
+            });
 
-        function backButton(){
-            var x = document.getElementById("tab3-div2");
-            x.style.display = 'none';
-            document.getElementById("tab3-div1").style.display='block';
-            document.getElementById('tab3-input').value = '';
-            document.getElementById('tab3-dropdown').value = ''
-        }
-    </script>
+            function clearForm() {
+                document.getElementById('tab3-input').value = '';
+                document.getElementById('tab3-dropdown').value = ''
+            }
+
+            function calculateData() {
+                var x = document.getElementById("tab3-div1");
+                x.style.display = 'none';
+                document.getElementById("tab3-div2").style.display = 'block';
+            }
+
+            function backButton() {
+                var x = document.getElementById("tab3-div2");
+                x.style.display = 'none';
+                document.getElementById("tab3-div1").style.display = 'block';
+                document.getElementById('tab3-input').value = '';
+                document.getElementById('tab3-dropdown').value = ''
+            }
+        </script>
 </body>
 
 </html>

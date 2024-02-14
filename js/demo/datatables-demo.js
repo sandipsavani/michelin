@@ -3,6 +3,11 @@ $(document).ready(function() {
   $('#dataTable').DataTable();
 });
 
+$('#dataTable').DataTable( {
+    order: []
+} );
+
+
 $(document).ready(function() {
   $('#dataTable2').DataTable();
 });
