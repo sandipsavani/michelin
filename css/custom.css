@@ -17,6 +17,7 @@ strong{
 
 table th{
     color: #000;
+    text-align: center;
 }
 .active-prom-card-title:hover {
     cursor: pointer;
