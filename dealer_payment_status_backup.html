@@ -168,7 +168,9 @@
                 <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-
+                    <!-- <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars">tests</i>
+                    </button> -->
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item dropdown no-arrow">
                         </li>
@@ -187,7 +189,7 @@
                     <div class="card shadow mb-4 ">
 
                         <div class="card-body  col-md-12">
-                            <div class="">
+                            <div class="table-responsive">
                                 <h1 class="h3 mb-4 text-gray-800">Dealer Payment Status</h1>
 
                                 <!-- Content Row -->
@@ -202,7 +204,7 @@
                                                         <div
                                                             class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                             Approved</div>
-                                                        <div class="h5 mb-0 font-weight-bold text-gray-800">12
+                                                        <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000
                                                         </div>
                                                     </div>
                                                     <div class="col-auto">
@@ -222,7 +224,7 @@
                                                         <div
                                                             class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                             Paid</div>
-                                                        <div class="h5 mb-0 font-weight-bold text-gray-800">10
+                                                        <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000
                                                         </div>
                                                     </div>
                                                     <div class="col-auto">
@@ -261,7 +263,7 @@
                                                         <div
                                                             class="text-xs font-weight-bold text-secondary text-uppercase mb-1">
                                                             Sent For Payment</div>
-                                                        <div class="h5 mb-0 font-weight-bold text-gray-800">12
+                                                        <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000
                                                         </div>
                                                     </div>
                                                     <div class="col-auto">
@@ -281,7 +283,7 @@
                                                         <div
                                                             class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                                             No Earned Payment</div>
-                                                        <div class="h5 mb-0 font-weight-bold text-gray-800">10
+                                                        <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000
                                                         </div>
                                                     </div>
                                                     <div class="col-auto">
@@ -346,43 +348,16 @@
 
 
                                 <div class="table-responsive">
-                                    <table data-url="json/data1.json" data-filter-control="true"
-                                        data-show-search-clear-button="true" class="table table-bordered"
-                                        id="dealerTable" width="100%" cellspacing="0">
+                                    <table class="table" id="dealerTable" data-filter-control="true"
+                                        data-show-search-clear-button="true">
                                         <thead>
                                             <tr>
-                                                <th data-field="promotion_name">Promotion Name</th>
-                                                <th data-field="payment_status">Payment Status</th>
-                                                <th data-field="bt">BT</th>
-                                                <th data-field="legal_name">Legal Name</th>
-                                                <th data-field="total_net_sales">Total Net Sales</th>
-                                                <th data-field="current_payment">Current Payment</th>
-                                                <th data-field="ytd_earn">YTD Earn</th>
-                                                <th data-field="ytd_paid">YTD Paid</th>
-                                                <th data-field="dealer_status">Dealer Status</th>
-                                                <th data-field="day_in_status">Days In Status</th>
-                                                <th data-field="last_edit_by">Last Edit By</th>
-                                                <th data-field="approved">Approved</th>
-                                                <th data-field="sent_for_payment">Sent for Payment</th>
+                                                <th data-field="name" data-filter-control="input">Item Name</th>
+                                                <th data-field="price" data-filter-control="select">Item Price</th>
                                             </tr>
                                         </thead>
-
                                         <tbody>
-                                            <tr>
-                                                <td style="width: 75%;">Michelin</td>
-                                                <td>5</td>
-                                                <td>5</td>
-                                                <td>5</td>
-                                                <td>5</td>
-                                                <td>5</td>
-                                                <td>5</td>
-                                                <td>5</td>
-                                                <td>5</td>
-                                                <td>5</td>
-                                                <td>5</td>
-                                                <td>5</td>
-                                                <td>5</td>
-                                            </tr>
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -447,28 +422,170 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.5/dist/bootstrap-table.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.5/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.5/dist/extensions/filter-control/utils.min.js"></script>
 
-    <script src="https://kit.fontawesome.com/a9b74ad92e.js" crossorigin="anonymous"></script>
-    <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="https://kit.fontawesome.com/a9b74ad92e.js" crossorigin="anonymous"></script>
+        <!-- Page level plugins -->
+        <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
-    <script>
-        $(document).ready(function () {
-            // $('#dealerTable').dataTable({
-            //     "bPaginate": false,
-            //     "bFilter": false,
-            //     "bInfo": false
-            // });
+        <!-- Page level custom scripts -->
+        <script src="js/demo/datatables-demo.js"></script>
+        <script>
+            $(function () {
+                $('#table').bootstrapTable()
+            })
+
+        </script>
+        <script>
 
             $(function () {
-                $('#dealerTable').bootstrapTable()
-            })
-        });
+                var datas = [
+                    {
+                        "id": 0,
+                        "name": "Item 0",
+                        "price": "$0",
+                        "amount": 3
+                    },
+                    {
+                        "id": 1,
+                        "name": "Item 1",
+                        "price": "$1",
+                        "amount": 4
+                    },
+                    {
+                        "id": 2,
+                        "name": "Item 2",
+                        "price": "$2",
+                        "amount": 8
+                    },
+                    {
+                        "id": 3,
+                        "name": "Item 3",
+                        "price": "$3",
+                        "amount": 2
+                    },
+                    {
+                        "id": 4,
+                        "name": "Item 4",
+                        "price": "$4",
+                        "amount": 90
+                    },
+                    {
+                        "id": 5,
+                        "name": "Item 5",
+                        "price": "$5",
+                        "amount": 2
+                    },
+                    {
+                        "id": 6,
+                        "name": "Item 6",
+                        "price": "$6",
+                        "amount": 3
+                    },
+                    {
+                        "id": 7,
+                        "name": "Item 7",
+                        "price": "$7",
+                        "amount": 7
+                    },
+                    {
+                        "id": 8,
+                        "name": "Item 8",
+                        "price": "$8",
+                        "amount": 39
+                    },
+                    {
+                        "id": 9,
+                        "name": "Item 9",
+                        "price": "$9",
+                        "amount": 78
+                    },
+                    {
+                        "id": 10,
+                        "name": "Item 10",
+                        "price": "$10",
+                        "amount": 30
+                    },
+                    {
+                        "id": 11,
+                        "name": "Item 11",
+                        "price": "$11",
+                        "amount": 32
+                    },
+                    {
+                        "id": 12,
+                        "name": "Item 12",
+                        "price": "$12",
+                        "amount": 12
+                    },
+                    {
+                        "id": 13,
+                        "name": "Item 13",
+                        "price": "$13",
+                        "amount": 76
+                    },
+                    {
+                        "id": 14,
+                        "name": "Item 14",
+                        "price": "$14",
+                        "amount": 10
+                    },
+                    {
+                        "id": 15,
+                        "name": "Item 15",
+                        "price": "$15",
+                        "amount": 9
+                    },
+                    {
+                        "id": 16,
+                        "name": "Item 16",
+                        "price": "$16",
+                        "amount": 8
+                    },
+                    {
+                        "id": 17,
+                        "name": "Item 17",
+                        "price": "$17",
+                        "amount": 1
+                    },
+                    {
+                        "id": 18,
+                        "name": "Item 18",
+                        "price": "$18",
+                        "amount": 99
+                    },
+                    {
+                        "id": 19,
+                        "name": "Item 19",
+                        "price": "$19",
+                        "amount": 100
+                    },
+                    {
+                        "id": 20,
+                        "name": "Item 20",
+                        "price": "$20",
+                        "amount": 109
+                    }
+                ];
 
-    </script>
-</body>
+                $.each(datas, function (i, f) {
+                    console.log('person: ', f.name);
+                    var tblRow = "<tr>" + "<td>" + f.name + "</td>" +
+                        "<td>" + f.price + "</td>" + "</tr>"
+                    $(tblRow).appendTo("#dealerTable tbody");
+                });
+
+            });
+
+
+        </script>
+    </body>
 
 </html>
