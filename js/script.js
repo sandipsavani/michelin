@@ -965,6 +965,55 @@ $(function () {
   $(".nep").text(statusCount["No Earned Payment"]);
   $(".sfp").text(statusCount["Sent For Payment"]);
 
+  const appendData = (rowData) => {
+    console.log("rowData: ", rowData);
+    $.each(rowData, function (i, data) {
+      var tblRow =
+        "<tr>" +
+        "<td>" +
+        data.PromoName +
+        "</td>" +
+        "<td>" +
+        data.ShipToNumber +
+        "</td>" +
+        "<td>" +
+        data.PaymentStatus +
+        "</td>" +
+        "<td>" +
+        data.LegalName +
+        "</td>" +
+        "<td>" +
+        data.CurrentPaymentAmount +
+        "</td>" +
+        "<td>" +
+        data.CurrentPaymentAmount +
+        "</td>" +
+        "<td>" +
+        data.YTDEarned.FormattedAmount +
+        "</td>" +
+        "<td>" +
+        data.YTDPaid.FormattedAmount +
+        "</td>" +
+        "<td>" +
+        data.DealerStatus +
+        "</td>" +
+        "<td>" +
+        data.DaysInStatus +
+        "</td>" +
+        "<td>" +
+        data.LastEditedBy +
+        "</td>" +
+        "<td>" +
+        data.Approved +
+        "</td>" +
+        "<td>" +
+        data.SentPaymentFor +
+        "</td>" +
+        "</tr>";
+      $(tblRow).appendTo("#dealerTable tbody");
+    });
+  };
+
   $(".cardFilter").click(function (e) {
     e.preventDefault();
     let filterType = "";
@@ -982,52 +1031,59 @@ $(function () {
     } else {
       filterType = "Deferred";
     }
-    alert(filterType);
+
+    const result = dealerPaymrntStatus.filter(
+      (data) => data.PaymentStatus === filterType
+    );
+    // console.log("result: ", result);
+
+    appendData(result);
   });
 
-  $.each(dealerPaymrntStatus, function (i, data) {
-    var tblRow =
-      "<tr>" +
-      "<td>" +
-      data.PromoName +
-      "</td>" +
-      "<td>" +
-      data.ShipToNumber +
-      "</td>" +
-      "<td>" +
-      data.PaymentStatus +
-      "</td>" +
-      "<td>" +
-      data.LegalName +
-      "</td>" +
-      "<td>" +
-      data.CurrentPaymentAmount +
-      "</td>" +
-      "<td>" +
-      data.CurrentPaymentAmount +
-      "</td>" +
-      "<td>" +
-      data.YTDEarned.FormattedAmount +
-      "</td>" +
-      "<td>" +
-      data.YTDPaid.FormattedAmount +
-      "</td>" +
-      "<td>" +
-      data.DealerStatus +
-      "</td>" +
-      "<td>" +
-      data.DaysInStatus +
-      "</td>" +
-      "<td>" +
-      data.LastEditedBy +
-      "</td>" +
-      "<td>" +
-      data.Approved +
-      "</td>" +
-      "<td>" +
-      data.SentPaymentFor +
-      "</td>" +
-      "</tr>";
-    $(tblRow).appendTo("#dealerTable tbody");
-  });
+  appendData(dealerPaymrntStatus);
+  //   $.each(dealerPaymrntStatus, function (i, data) {
+  //     var tblRow =
+  //       "<tr>" +
+  //       "<td>" +
+  //       data.PromoName +
+  //       "</td>" +
+  //       "<td>" +
+  //       data.ShipToNumber +
+  //       "</td>" +
+  //       "<td>" +
+  //       data.PaymentStatus +
+  //       "</td>" +
+  //       "<td>" +
+  //       data.LegalName +
+  //       "</td>" +
+  //       "<td>" +
+  //       data.CurrentPaymentAmount +
+  //       "</td>" +
+  //       "<td>" +
+  //       data.CurrentPaymentAmount +
+  //       "</td>" +
+  //       "<td>" +
+  //       data.YTDEarned.FormattedAmount +
+  //       "</td>" +
+  //       "<td>" +
+  //       data.YTDPaid.FormattedAmount +
+  //       "</td>" +
+  //       "<td>" +
+  //       data.DealerStatus +
+  //       "</td>" +
+  //       "<td>" +
+  //       data.DaysInStatus +
+  //       "</td>" +
+  //       "<td>" +
+  //       data.LastEditedBy +
+  //       "</td>" +
+  //       "<td>" +
+  //       data.Approved +
+  //       "</td>" +
+  //       "<td>" +
+  //       data.SentPaymentFor +
+  //       "</td>" +
+  //       "</tr>";
+  //     $(tblRow).appendTo("#dealerTable tbody");
+  //   });
 });
