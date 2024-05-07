@@ -10,7 +10,7 @@ $(function () {
       PaymentStatus: "No Earned Payment",
       HLC: "7184846",
       HLCAcctNum: "1169847",
-      LegalName: "EXPRESS TIRE & AUTO LLC",
+      LegalName: "Legal Name 1",
       TotalUnits: 0.0,
       LoyaltyPercentage: 0.0,
       PercentToGoal: 0.0,
@@ -42,7 +42,7 @@ $(function () {
       },
       DealerStatus: "Active",
       DaysInStatus: 3,
-      LastEditedBy: "David Smith",
+      LastEditedBy: "Test 1",
       Approved: "2024-04-22T00:00:00",
       SentPaymentFor: "2024-04-29T00:00:00",
       Status: "View",
@@ -69,7 +69,7 @@ $(function () {
       PaymentStatus: "Deferred",
       HLC: "7168706",
       HLCAcctNum: "1391310",
-      LegalName: "DC AUTO REPAIR AND QUICK LUBE LLC",
+      LegalName: "Legal Name 2",
       TotalUnits: 0.0,
       LoyaltyPercentage: 0.0,
       PercentToGoal: 0.0,
@@ -101,7 +101,7 @@ $(function () {
       },
       DealerStatus: "Active",
       DaysInStatus: 3,
-      LastEditedBy: "David Smith",
+      LastEditedBy: "Test 1",
       Approved: "2024-04-22T00:00:00",
       SentPaymentFor: "2024-04-29T00:00:00",
       Status: "View",
@@ -128,7 +128,7 @@ $(function () {
       PaymentStatus: "Approved",
       HLC: "9216825",
       HLCAcctNum: "1543373",
-      LegalName: "MATT'S AUTOMOTIVE SERVICE CENTER, LLC",
+      LegalName: "Legal Name 3",
       TotalUnits: 0.0,
       LoyaltyPercentage: 0.0,
       PercentToGoal: 0.0,
@@ -160,7 +160,7 @@ $(function () {
       },
       DealerStatus: "Active",
       DaysInStatus: 10,
-      LastEditedBy: "David Smith",
+      LastEditedBy: "Test 1",
       Approved: "2024-04-22T00:00:00",
       SentPaymentFor: null,
       Status: "Edit",
@@ -187,7 +187,7 @@ $(function () {
       PaymentStatus: "Deferred",
       HLC: "7184846",
       HLCAcctNum: "1169847",
-      LegalName: "EXPRESS TIRE & AUTO LLC",
+      LegalName: "Legal Name 4",
       TotalUnits: 0.0,
       LoyaltyPercentage: 0.0,
       PercentToGoal: 0.0,
@@ -219,7 +219,7 @@ $(function () {
       },
       DealerStatus: "Active",
       DaysInStatus: 3,
-      LastEditedBy: "David Smith",
+      LastEditedBy: "Test 1",
       Approved: "2024-04-22T00:00:00",
       SentPaymentFor: "2024-04-29T00:00:00",
       Status: "View",
@@ -246,7 +246,7 @@ $(function () {
       PaymentStatus: "Sent For Payment",
       HLC: "7168706",
       HLCAcctNum: "1391310",
-      LegalName: "DC AUTO REPAIR AND QUICK LUBE LLC",
+      LegalName: "Legal Name 5",
       TotalUnits: 0.0,
       LoyaltyPercentage: 0.0,
       PercentToGoal: 0.0,
@@ -278,7 +278,7 @@ $(function () {
       },
       DealerStatus: "Active",
       DaysInStatus: 3,
-      LastEditedBy: "David Smith",
+      LastEditedBy: "Test 1",
       Approved: "2024-04-22T00:00:00",
       SentPaymentFor: "2024-04-29T00:00:00",
       Status: "View",
@@ -305,7 +305,7 @@ $(function () {
       PaymentStatus: "Paid",
       HLC: "9216825",
       HLCAcctNum: "1543373",
-      LegalName: "MATT'S AUTOMOTIVE SERVICE CENTER, LLC",
+      LegalName: "Legal Name 6",
       TotalUnits: 0.0,
       LoyaltyPercentage: 0.0,
       PercentToGoal: 0.0,
@@ -337,7 +337,7 @@ $(function () {
       },
       DealerStatus: "Active",
       DaysInStatus: 10,
-      LastEditedBy: "David Smith",
+      LastEditedBy: "Test 1",
       Approved: "2024-04-22T00:00:00",
       SentPaymentFor: null,
       Status: "Edit",
@@ -364,7 +364,7 @@ $(function () {
       PaymentStatus: "Paid",
       HLC: "9210932",
       HLCAcctNum: "0362717",
-      LegalName: "MR. RIM",
+      LegalName: "Legal Name 7",
       TotalUnits: 0.0,
       LoyaltyPercentage: 0.0,
       PercentToGoal: 0.0,
@@ -396,7 +396,7 @@ $(function () {
       },
       DealerStatus: "Active",
       DaysInStatus: 14,
-      LastEditedBy: "Bill DeMoise",
+      LastEditedBy: "Test 2",
       Approved: "2024-04-18T00:00:00",
       SentPaymentFor: null,
       Status: "Edit",
@@ -423,7 +423,7 @@ $(function () {
       PaymentStatus: "Approved",
       HLC: "9211081",
       HLCAcctNum: "0362869",
-      LegalName: "BARRINGTON TIRE INC.",
+      LegalName: "Legal Name 8",
       TotalUnits: 0.0,
       LoyaltyPercentage: 0.0,
       PercentToGoal: 0.0,
@@ -455,7 +455,7 @@ $(function () {
       },
       DealerStatus: "Active",
       DaysInStatus: 14,
-      LastEditedBy: "Bill DeMoise",
+      LastEditedBy: "Test 2",
       Approved: "2024-04-18T00:00:00",
       SentPaymentFor: null,
       Status: "Edit",
@@ -482,7 +482,7 @@ $(function () {
       PaymentStatus: "Sent For Payment",
       HLC: "9211099",
       HLCAcctNum: "0362889",
-      LegalName: "R&T SALES LIMITED",
+      LegalName: "Legal Name 9",
       TotalUnits: 0.0,
       LoyaltyPercentage: 0.0,
       PercentToGoal: 0.0,
@@ -514,7 +514,7 @@ $(function () {
       },
       DealerStatus: "Active",
       DaysInStatus: 10,
-      LastEditedBy: "Bill DeMoise",
+      LastEditedBy: "Test 2",
       Approved: "2024-04-18T00:00:00",
       SentPaymentFor: "2024-04-22T00:00:00",
       Status: "View",
@@ -541,7 +541,7 @@ $(function () {
       PaymentStatus: "Approved",
       HLC: "9211376",
       HLCAcctNum: "0363169",
-      LegalName: "9122-1325 QUEBEC INC.",
+      LegalName: "Legal Name 10",
       TotalUnits: 0.0,
       LoyaltyPercentage: 0.0,
       PercentToGoal: 0.0,
@@ -573,7 +573,7 @@ $(function () {
       },
       DealerStatus: "Active",
       DaysInStatus: 14,
-      LastEditedBy: "Bill DeMoise",
+      LastEditedBy: "Test 2",
       Approved: "2024-04-18T00:00:00",
       SentPaymentFor: null,
       Status: "Edit",
@@ -600,7 +600,7 @@ $(function () {
       PaymentStatus: "Pending",
       HLC: "9211418",
       HLCAcctNum: "0363211",
-      LegalName: "COTTINGHAM TIRE & AUTO SERVICE INC.",
+      LegalName: "Legal Name 11",
       TotalUnits: 0.0,
       LoyaltyPercentage: 0.0,
       PercentToGoal: 0.0,
@@ -632,7 +632,7 @@ $(function () {
       },
       DealerStatus: "Active",
       DaysInStatus: 14,
-      LastEditedBy: "Bill DeMoise",
+      LastEditedBy: "Test 2",
       Approved: "2024-04-18T00:00:00",
       SentPaymentFor: null,
       Status: "Edit",
@@ -659,7 +659,7 @@ $(function () {
       PaymentStatus: "Pending",
       HLC: "7585614",
       HLCAcctNum: "0350916",
-      LegalName: "FOUNTAIN TIRE  (MX KAD)",
+      LegalName: "Legal Name 12",
       TotalUnits: 0.0,
       LoyaltyPercentage: 0.0,
       PercentToGoal: 0.0,
@@ -691,7 +691,7 @@ $(function () {
       },
       DealerStatus: "Disabled",
       DaysInStatus: 14,
-      LastEditedBy: "Bill DeMoise",
+      LastEditedBy: "Test 2",
       Approved: "2024-04-18T00:00:00",
       SentPaymentFor: null,
       Status: "Edit",
@@ -718,7 +718,7 @@ $(function () {
       PaymentStatus: "Sent For Payment",
       HLC: "7537413",
       HLCAcctNum: "0702231",
-      LegalName: "VIP PERFORMANCE",
+      LegalName: "Legal Name 13",
       TotalUnits: 0.0,
       LoyaltyPercentage: 0.0,
       PercentToGoal: 0.0,
@@ -750,7 +750,7 @@ $(function () {
       },
       DealerStatus: "Active",
       DaysInStatus: 10,
-      LastEditedBy: "Bill DeMoise",
+      LastEditedBy: "Test 2",
       Approved: "2024-04-18T00:00:00",
       SentPaymentFor: "2024-04-22T00:00:00",
       Status: "View",
@@ -777,7 +777,7 @@ $(function () {
       PaymentStatus: "No Earned Payment",
       HLC: "7184846",
       HLCAcctNum: "1169847",
-      LegalName: "EXPRESS TIRE & AUTO LLC",
+      LegalName: "Legal Name 14",
       TotalUnits: 0.0,
       LoyaltyPercentage: 0.0,
       PercentToGoal: 0.0,
@@ -809,7 +809,7 @@ $(function () {
       },
       DealerStatus: "Active",
       DaysInStatus: 105,
-      LastEditedBy: "David Smith",
+      LastEditedBy: "Test 1",
       Approved: null,
       SentPaymentFor: null,
       Status: "View",
@@ -836,7 +836,7 @@ $(function () {
       PaymentStatus: "No Earned Payment",
       HLC: "7168706",
       HLCAcctNum: "1391310",
-      LegalName: "DC AUTO REPAIR AND QUICK LUBE LLC",
+      LegalName: "Legal Name 15",
       TotalUnits: 0.0,
       LoyaltyPercentage: 0.0,
       PercentToGoal: 0.0,
@@ -868,7 +868,7 @@ $(function () {
       },
       DealerStatus: "Active",
       DaysInStatus: 3,
-      LastEditedBy: "David Smith",
+      LastEditedBy: "Test 1",
       Approved: "2024-01-24T00:00:00",
       SentPaymentFor: "2024-04-29T00:00:00",
       Status: "View",
@@ -895,7 +895,7 @@ $(function () {
       PaymentStatus: "Approved",
       HLC: "9216825",
       HLCAcctNum: "1543373",
-      LegalName: "MATT'S AUTOMOTIVE SERVICE CENTER, LLC",
+      LegalName: "Legal Name 16",
       TotalUnits: 0.0,
       LoyaltyPercentage: 0.0,
       PercentToGoal: 0.0,
@@ -927,7 +927,7 @@ $(function () {
       },
       DealerStatus: "Active",
       DaysInStatus: 105,
-      LastEditedBy: "David Smith",
+      LastEditedBy: "Test 1",
       Approved: "2024-01-18T00:00:00",
       SentPaymentFor: null,
       Status: "Edit",
@@ -966,7 +966,7 @@ $(function () {
   $(".sfp").text(statusCount["Sent For Payment"]);
 
   const appendData = (rowData, filerType) => {
-    if (filerType === "cardFilter") {
+    if (filerType === "cardFilter" || filerType === "gridFilterData") {
       $("#dealerTable tbody").text("");
     }
     $.each(rowData, function (i, data) {
@@ -1017,10 +1017,9 @@ $(function () {
     });
   };
 
-  $(".cardFilter").click(function (e) {
-    e.preventDefault();
+  const getFilterType = (clickedFilter) => {
     let filterType = "";
-    const clickedFilter = $(this).attr("id");
+
     if (clickedFilter === "approved") {
       filterType = "Approved";
     } else if (clickedFilter === "paid") {
@@ -1034,12 +1033,51 @@ $(function () {
     } else {
       filterType = "Deferred";
     }
+    return filterType;
+  };
+
+  $(".cardFilter").click(function (e) {
+    e.preventDefault();
+    const clickedFilter = $(this).attr("id");
+    const selectedCardFilter = getFilterType(clickedFilter);
 
     const result = dealerPaymrntStatus.filter(
-      (data) => data.PaymentStatus === filterType
+      (data) => data.PaymentStatus === selectedCardFilter
     );
 
     appendData(result, "cardFilter");
+  });
+  const getGridData = (selectedCbValue) => {
+    const selectedFilterValue = [];
+    const getFilterDara = selectedCbValue.map((value) => {
+      const filterdVal = getFilterType(value);
+      selectedFilterValue.push(filterdVal);
+      return null;
+    });
+
+    const gridResult = dealerPaymrntStatus.filter(
+      (data) =>
+        data.PaymentStatus === selectedFilterValue[0] ||
+        data.PaymentStatus === selectedFilterValue[1] ||
+        data.PaymentStatus === selectedFilterValue[2] ||
+        data.PaymentStatus === selectedFilterValue[3] ||
+        data.PaymentStatus === selectedFilterValue[4] ||
+        data.PaymentStatus === selectedFilterValue[5] ||
+        data.PaymentStatus === selectedFilterValue[6]
+    );
+    appendData(gridResult, "gridFilterData");
+  };
+
+  $("#example-allSelectedText-includeSelectAllOption").multiselect({
+    includeSelectAllOption: true,
+    allSelectedText: "No option left ...",
+    onDropdownHide: function () {
+      var selectedCbValue = $(
+        "#example-allSelectedText-includeSelectAllOption"
+      ).val();
+
+      getGridData(selectedCbValue);
+    },
   });
 
   appendData(dealerPaymrntStatus, "allData");
