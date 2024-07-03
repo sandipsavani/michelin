@@ -61,3 +61,10 @@ table th{
     border:  1px solid #e3e6f0 !important;
 }
 
+.width-100 {
+    width: 100% !important;
+}
+
+.text-black {
+    color: #000 !important;
+  }
