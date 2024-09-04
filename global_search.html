@@ -38,13 +38,17 @@
 <style>
     #result {
         position: absolute;
-        width: 100%;
+        width: 93%;
         max-width: 870px;
         cursor: pointer;
         overflow-y: auto;
         max-height: 400px;
         box-sizing: border-box;
         z-index: 1001;
+    }
+
+    .list-group-item {
+        padding: .5rem 1rem !important;
     }
 
     .link-class:hover {
@@ -177,8 +181,9 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
-                    <div class="row center h-100">
+                <div class="container-fluid ">
+                    <div class="row card shadow card-body mb-4 center h-100"
+                        style="flex-direction: row !important;margin: 0.1rem;height: 18rem;">
                         <div class="col-md-4">
                             <div class="mt-4 mb-4">
                                 <form
@@ -218,7 +223,6 @@
                             </div>
                         </div>
                         <div class="col-md-4"></div>
-
                     </div>
 
                     <!-- Content Row -->
