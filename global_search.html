@@ -632,7 +632,7 @@
                 $.getJSON('data.json', function (data) {
                     console.log('data: ', data);
                     $.each(data, function (key, value) {
-                        if (value.name.search(expression) != -1 || value.location.search(expression) != -1) {
+                        if (value.productName.search(expression) != -1 || value.productCode.search(expression) != -1) {
                             $('#result').append('<a href="' + value.location + '" target="_self"><li class="list-group-item link-class">' + value.productCode + ' | <span class="text-muted">' + value.productName + '</span></li>');
                         }
                     });
