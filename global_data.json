@@ -1,0 +1,11 @@
+[
+    {
+      "searchKey": "Distributor ID / Customer Number",
+      "location":"https://sandipsavani.github.io/michelin/dist_cust_num.html"
+    },
+    {
+      "searchKey": "Dealer Payment Status",
+      "location":"https://sandipsavani.github.io/michelin/dealer_payment_status.html"
+    }
+    
+  ]

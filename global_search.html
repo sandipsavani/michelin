@@ -183,14 +183,14 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid ">
                     <div class="row card shadow card-body mb-4 center h-100"
-                        style="flex-direction: row !important;margin: 0.1rem;height: 18rem !important;">
+                        style="flex-direction: row !important;margin: 0.1rem;height: 7.5rem !important;">
                         <div class="col-md-4">
                             <div class="mt-4 mb-4">
                                 <form
                                     class="d-none d-sm-inline-block form-inline mr-auto  my-2 my-md-0 mw-100 navbar-search"
                                     style="width: 100%;">
                                     <div class=" input-group">
-                                        <input type="text" style="border: 1px solid #000 !important;"
+                                        <input type="text" id="global_search" style="border: 1px solid #000 !important;"
                                             class="form-control bg-light border-0 small" placeholder="Global Search"
                                             aria-label="Search" aria-describedby="basic-addon2">
                                         <div class="input-group-append">
@@ -200,6 +200,8 @@
                                         </div>
                                     </div>
                                 </form>
+                                <ul class="list-group" id="global_result"></ul>
+
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -647,6 +649,28 @@
                 var click_text = $(this).text().split('|');
                 $('#search').val($.trim(click_text[0]));
                 $("#result").html('');
+            });
+
+            $.ajaxSetup({ cache: false });
+            $('#global_search').keyup(function () {
+                $('#global_result').html('');
+                $('#state').val('');
+                var searchField = $('#global_search').val();
+                var expression = new RegExp(searchField, "i");
+                $.getJSON('global_data.json', function (data) {
+                    console.log('data: ', data);
+                    $.each(data, function (key, value) {
+                        if (value.searchKey.search(expression) != -1) {
+                            $('#global_result').append('<a href="' + value.location + '" target="_self"><li class="list-group-item link-class">' + value.searchKey + ' </li></a>');
+                        }
+                    });
+                });
+            });
+
+            $('#global_result').on('click', 'li', function () {
+                var click_text = $(this).text().split('|');
+                $('#global_search').val($.trim(click_text[0]));
+                $("#global_result").html('');
             });
 
         });
